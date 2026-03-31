@@ -1,0 +1,315 @@
+body{
+    font-family: Arial;
+    background: linear-gradient(180deg,#522546,#2C2C2C);
+    min-height:100vh;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 1rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    text-align:center;
+    width: 80%;
+    padding:10px;
+}
+
+.tagline{
+    margin-bottom:30px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: white;
+    border-bottom: 1px solid gray;
+}
+
+/* ================= TEXT CONTENT ================= */
+
+.lpara,.rpara{
+    width: 60%;
+    font-size: 20px;
+}
+
+.lleft,.lright{
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lright{
+    margin-top: 40px;
+    border-top: 1px solid gray;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn{
+    display:block;
+    width:220px;
+    padding:12px 20px;
+    margin:10px auto;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.serviceman{
+    background:#ff57d577;
+    font-size: 23px;
+    color:white;
+    box-shadow: 1px 1px 70px rgba(177, 177, 177, 0.325);
+}
+
+.customer{
+    background:#f7374ed4;
+    font-size: 23px;
+    color:white;
+    box-shadow: 1px 1px 70px rgba(177, 177, 177, 0.325);
+}
+
+/* ================= HEADER ANIMATION ================= */
+
+.header{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    display: inline-flex;
+    margin-top: 40px;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 🔥 Bigger FixIt */
+.wrapper .static-txt{
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Dynamic Text Box */
+.wrapper .dynamic-txt{
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+
+/* 🔥 Bigger Animated Text */
+.dynamic-txt li{
+    color: #F7374F;
+    list-style: none;
+    font-size: 40px;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+
+/* Typing Effect FIXED */
+.dynamic-txt li span{
+    position: relative;
+    display: inline-block;
+}
+
+/* IMPORTANT FIX */
+.dynamic-txt li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #522546; /* match background */
+    border-left: 2px solid #f7374e;
+    animation: typing 3s steps(22) infinite;
+}
+
+/* Smooth Slide */
+@keyframes slide{
+    100%{
+        top: -200px; /* 4 × 50px */
+    }
+}
+
+/* 🔥 FIXED typing (no letter cut) */
+@keyframes typing{
+    0%{
+        left: 0;
+    }
+    40%{
+        left: 100%;
+    }
+    60%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    padding: 20px;
+    width: 80%;
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left{
+    font-size: 20px;
+    width: 60%;
+    color: white;
+}
+
+.right{
+    color: #88303d;
+    font-size: 30px;
+    width: 40%;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ================= CITY SLIDER ================= */
+
+.slide{
+    overflow: hidden;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.slide div{
+    display: flex;
+    flex-direction: column;
+    animation: cityScroll 7s linear infinite;
+}
+
+.slide div div{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+}
+
+/* Smooth infinite scroll */
+@keyframes cityScroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-160px); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px){
+    .lpara,.rpara{
+        width: 80%;
+        font-size: 18px;
+    }
+
+    .footer{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left, .right{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px){
+
+    .wrapper{
+        flex-direction: column;
+    }
+
+    .wrapper .static-txt{
+        font-size: 36px;
+    }
+
+    .dynamic-txt li{
+        font-size: 28px;
+    }
+
+    .lleft, .lright{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .lpara,.rpara{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .btn{
+        width: 180px;
+    }
+
+    .tagline{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .container{
+        width: 95%;
+    }
+
+    .wrapper .static-txt{
+        font-size: 28px;
+    }
+
+    .dynamic-txt li{
+        font-size: 22px;
+    }
+
+    .slide div div{
+        font-size: 18px;
+    }
+
+    .left{
+        font-size: 16px;
+    }
+}
+
+
+/* ================= COPYRIGHT FOOTER ================= */
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 15px 10px;
+    color: #ccc;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
+}
+
+.copyright a{
+    color: #F7374F;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.copyright a:hover{
+    color: #ff8a9a;
+    text-decoration: underline;
+}

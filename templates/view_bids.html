@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Bids - FixIt</title>
+    <link rel="stylesheet" href="/static/view_bids.css">
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<div class="container">
+
+    <h2>💰 All Bids</h2>
+
+    <div class="grid">
+
+        {% for bid in bids %}
+
+        <div class="card">
+
+            <div class="header">
+                <h3>{{ bid[1] }}</h3>
+                <span class="price">₹{{ bid[3] }}</span>
+            </div>
+
+            <p class="desc">{{ bid[4] }}</p>
+
+            <!-- Status -->
+            <p class="status {{ bid[5] }}">{{ bid[5] }}</p>
+
+            <!-- Accept Button -->
+            {% if bid[5] == 'pending' and not accepted_bid %}
+            <form action="/accept_bid" method="POST">
+                <input type="hidden" name="bid_id" value="{{ bid[0] }}">
+                <input type="hidden" name="request_id" value="{{ bid[2] }}">
+                <button class="accept-btn">✔ Accept Bid</button>
+            </form>
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* ================= BODY ================= */
+
+body{
+    min-height: 100vh;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    color:white;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg-animation{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,55,100,0.15), transparent 40%);
+    animation: moveBg 10s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes moveBg{
+    0%{ transform: translate(-25%, -25%); }
+    50%{ transform: translate(-10%, -10%); }
+    100%{ transform: translate(-25%, -25%); }
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+/* ================= HEADING ================= */
+
+h2{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 18px;
+    transition: 0.3s;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    display: block;
+}
+
+/* Hover */
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* ================= ICON ================= */
+
+.icon{
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+/* ================= TEXT ================= */
+
+.card h3{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.card p{
+    font-size: 14px;
+    color:#ddd;
+    line-height: 1.5;
+}
+
+/* ================= FOOTER ================= */
+
+.copyright{
+    text-align:center;
+    margin: 40px 0 20px;
+    font-size:13px;
+    color:#ccc;
+}
+
+.copyright a{
+    color:#ff416c;
+    text-decoration:none;
+}
+
+.copyright a:hover{
+    text-decoration:underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px){
+
+    h2{
+        font-size:22px;
+    }
+
+}

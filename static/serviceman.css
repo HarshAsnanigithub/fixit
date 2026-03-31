@@ -1,0 +1,176 @@
+/* ================= BODY ================= */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    min-height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
+
+.bg-animation{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,55,100,0.15), transparent 40%);
+    animation: moveBg 10s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moveBg{
+    0%{ transform: translate(-25%, -25%); }
+    50%{ transform: translate(-10%, -10%); }
+    100%{ transform: translate(-25%, -25%); }
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    padding:50px;
+    border-radius:20px;
+    width:400px;
+    text-align:center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    color:white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ================= TEXT ================= */
+
+.logo{
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(45deg,#ff416c,#ff4b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.title{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    font-size:14px;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-group{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.option-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Register Button */
+.register{
+    background: linear-gradient(45deg,#ff416c,#ff4b2b);
+    color:white;
+}
+
+.register:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255,75,43,0.5);
+}
+
+/* Login Button */
+.login{
+    background: linear-gradient(45deg,#6a11cb,#2575fc);
+    color:white;
+}
+
+.login:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(37,117,252,0.5);
+}
+
+/* Glow Effect */
+.option-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.option-btn:hover::before{
+    left:100%;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= FOOTER ================= */
+
+.copyright{
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.copyright a{
+    color: #ff416c;
+    text-decoration: none;
+}
+
+.copyright a:hover{
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px){
+
+    .container{
+        width: 90%;
+        padding: 30px;
+    }
+
+    .logo{
+        font-size: 36px;
+    }
+
+    .title{
+        font-size: 22px;
+    }
+}

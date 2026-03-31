@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Request Posted</title>
+<link rel="stylesheet" href="/static/request.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ✅ Animated Tick -->
+<div class="success-checkmark">
+  <div class="check-icon">
+    <span class="icon-line line-tip"></span>
+    <span class="icon-line line-long"></span>
+    <div class="icon-circle"></div>
+    <div class="icon-fix"></div>
+  </div>
+</div>
+
+<h2>Request Posted Successfully</h2>
+
+<p>Your service request has been posted.</p>
+<p>You will be redirected shortly...</p>
+
+</div>
+
+<!-- ✅ Redirect after delay -->
+<script id="redirectjs">
+setTimeout(function(){
+    window.location.href = "/customer_dashboard";
+}, 3500); 
+</script>
+
+</body>
+</html>

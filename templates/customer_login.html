@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="/static/customer_login.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Customer Login</h2>
+
+    <form method="POST">
+
+        <div class="input-group">
+            <input type="text" name="contact" placeholder=" " required>
+            <label>Contact</label>
+        </div>
+
+        <div class="input-group">
+            <input type="password" name="password" placeholder=" " required>
+            <label>Password</label>
+        </div>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+
+</div>
+
+<div class="copyright">
+    © 2026 FixIt | Built by 
+    <a href="#" target="_blank">Harsh Asnani</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* ================= BODY ================= */
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    color: white;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg-animation{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,55,100,0.15), transparent 40%);
+    animation: moveBg 10s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes moveBg{
+    0%{ transform: translate(-25%, -25%); }
+    50%{ transform: translate(-10%, -10%); }
+    100%{ transform: translate(-25%, -25%); }
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* ================= HEADING ================= */
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* ================= BADGE ================= */
+
+.badge {
+    display: inline-block;
+    background: linear-gradient(45deg,#ff416c,#ff4b2b);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* ================= TEXT ================= */
+
+.content p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* ================= BUTTON ================= */
+
+.view-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg,#6a11cb,#2575fc);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(37,117,252,0.5);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px){
+    .container{
+        width: 95%;
+    }
+}

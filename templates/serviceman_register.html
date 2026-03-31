@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Man Register</title>
+    <link rel="stylesheet" href="/static/serviceman_register.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Service Man Registration</h2>
+
+    <form method="POST" action="/serviceman_register">
+
+        <div class="input-group">
+            <input type="text" name="name" required>
+            <label>Name</label>
+        </div>
+
+        <div class="input-group">
+            <input type="text" name="contact" required>
+            <label>Contact Number</label>
+        </div>
+
+        <div class="input-group">
+            <select name="service_type" required>
+                <option value="" disabled selected>Select Service</option>
+                <option>Electrician</option>
+                <option>Plumber</option>
+                <option>Mechanic</option>
+                <option>Carpenter</option>
+                <option>AC Repair</option>
+                <option>Painter</option>
+                <option>Appliance Repair</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <input type="password" name="password" required>
+            <label>Password</label>
+        </div>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
+
+<div class="copyright">
+    © 2026 FixIt | Built by 
+    <a href="#" target="_blank">Harsh Asnani</a>
+</div>
+
+</body>
+</html>

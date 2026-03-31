@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Requests - FixIt</title>
+    <link rel="stylesheet" href="/static/my_requests.css">
+</head>
+
+<body>
+
+<div class="bg-animation"></div>
+
+<div class="container">
+
+    <h2>📂 My Service Requests</h2>
+
+    <div class="grid">
+
+        {% for req in requests %}
+
+        <div class="card">
+
+            <div class="badge">{{ req[3] }}</div>
+
+            <div class="content">
+                <p><b>👤 Name:</b> {{ req[1] }}</p>
+            </div>
+
+            <form action="/view_bids" method="GET">
+                <input type="hidden" name="request_id" value="{{ req[0] }}">
+                <button class="view-btn">View Bids</button>
+            </form>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

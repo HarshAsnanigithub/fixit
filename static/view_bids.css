@@ -1,0 +1,140 @@
+/* ================= BODY ================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    color: white;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg-animation{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(76,175,80,0.15), transparent 40%);
+    animation: moveBg 10s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes moveBg{
+    0%{ transform: translate(-25%, -25%); }
+    50%{ transform: translate(-10%, -10%); }
+    100%{ transform: translate(-25%, -25%); }
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* ================= HEADING ================= */
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Price Highlight */
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* ================= DESCRIPTION ================= */
+
+.desc {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* ================= STATUS ================= */
+
+.status {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+/* Status colors */
+.status.accepted {
+    color: #4CAF50;
+}
+
+.status.rejected {
+    color: #ff4b5c;
+}
+
+.status.pending {
+    color: #ffc107;
+}
+
+/* ================= BUTTON ================= */
+
+.accept-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg,#4CAF50,#2ecc71);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.accept-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(76,175,80,0.5);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px){
+    .container{
+        width: 95%;
+    }
+}

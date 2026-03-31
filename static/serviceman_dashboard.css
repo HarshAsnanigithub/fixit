@@ -1,0 +1,167 @@
+/* ================= BODY ================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
+
+.bg-animation{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,55,100,0.15), transparent 40%);
+    animation: moveBg 10s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moveBg{
+    0%{ transform: translate(-25%, -25%); }
+    50%{ transform: translate(-10%, -10%); }
+    100%{ transform: translate(-25%, -25%); }
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* ================= HEADING ================= */
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect */
+.card::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover::before{
+    opacity: 1;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* ================= BADGE ================= */
+
+.badge {
+    display: inline-block;
+    background: linear-gradient(45deg,#ff416c,#ff4b2b);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ================= CONTENT ================= */
+
+.content h3 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.location {
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.4;
+}
+
+/* ================= BUTTON ================= */
+
+.apply-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg,#ff416c,#ff4b2b);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.apply-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255,75,43,0.5);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px){
+    h2{
+        font-size: 22px;
+    }
+}
+
+/* ===== CLICK FIX ===== */
+
+.bg-animation{
+    pointer-events: none;
+}
+
+.card::before{
+    pointer-events: none;
+}
+
+.card{
+    position: relative;
+    z-index: 1;
+}
+
+.apply-btn{
+    position: relative;
+    z-index: 2;
+}
